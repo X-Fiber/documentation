@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[6036],{41334:e=>{e.exports=JSON.parse('{"label":"convention","permalink":"/blog/tags/convention","allTagsPath":"/blog/tags","count":2,"unlisted":false}')}}]);
