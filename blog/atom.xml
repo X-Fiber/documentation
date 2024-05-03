@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://x-fiber.org/blog</id>
+    <title>X-Fiber Blog</title>
+    <updated>2024-03-25T09:03:53.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://x-fiber.org/blog"/>
+    <subtitle>X-Fiber Blog</subtitle>
+    <icon>https://x-fiber.org/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Композиція]]></title>
+        <id>https://x-fiber.org/blog/ba-composition</id>
+        <link href="https://x-fiber.org/blog/ba-composition"/>
+        <updated>2024-03-25T09:03:53.000Z</updated>
+        <summary type="html"><![CDATA[Методологія побудова кодової бази бізнес-процесів за допомогою композиції елементів]]></summary>
+        <content type="html"><![CDATA[<p>Абсолютно переважна більшість веб-застосунків розрахована на відкликання подій. Так, веб-клієнти, націлені на обробку
+подій, які надходять від користувачів, а веб-сервери, націлені на обробку подій від джерел взаємодії, якими можуть
+виступати як веб-клієнти так і інші зовнішні системи.</p>
+<p>При відкликані події задіюється обробник цієї події, в рамках якого, може бути реалізовано як графічні зміни, так і
+здійснення запитів, наприклад при видалені значення в полі на формі веб-клієнта буде створена подія "onChange". При
+надсиланні http запиту до сервера ж сервер отримає http запит з відповідним кінцевим маршрутом, за яким повинен його
+обробити.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="обробники-подій">Обробники подій<a href="https://x-fiber.org/blog/ba-composition#%D0%BE%D0%B1%D1%80%D0%BE%D0%B1%D0%BD%D0%B8%D0%BA%D0%B8-%D0%BF%D0%BE%D0%B4%D1%96%D0%B9" class="hash-link" aria-label="Пряме посилання на Обробники подій" title="Пряме посилання на Обробники подій">​</a></h2>
+<p>В рамках конкретного обробника може бути реалізовано різноманітна бізнес-логіка, так, виділимо 2 приклади:</p>
+<ol>
+<li>Реєстрація особи - <code>signup</code>
+<ol>
+<li>Перевіряється коректність даних.</li>
+<li>Перевіряється існування користувача з такою ж поштою.</li>
+<li>Хешується пароль.</li>
+<li>Зберігається запис в базу даних.</li>
+<li>Створюється токен підтвердження авторизації.</li>
+<li>Створюється лист та надсилається на електронну пошту для подальшого підтвердження авторизації.</li>
+<li>Повертається http response зі статусом "201 - Created"</li>
+</ol>
+</li>
+<li>Вихід з власного кабінету - <code>logout</code>
+<ol>
+<li>Видаляється сесія користувача з memory storage</li>
+<li>Повертається http response зі статусом "200"</li>
+</ol>
+</li>
+</ol>
+<p>З прикладів видно, що в рамках реєстрації користувача виконується ряд етапів. <code>Композиція</code> пропонує етапи рознести в
+різні модулі для відстежування явного використання бізнес-процесу</p>
+<p>Такий підхід має ряд переваг, перше - це спрощення розуміння коду - оскільки кожний етап явно відділяється один від
+іншого, друге - можливість перевикористання кодової бази, а також можливість явної документації процесів, а також, їх
+коментування для спрощеної підтримки.</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>примітка</div><div class="admonitionContent_BuS1"><p>Якщо бізнес-логіка обробника не вимагає реалізації достатньої кількості етапів, все ж потрібно реалізовувати всю
+бізнес-логіку в одному обробнику. В цілому, більше 3-х етапів вже повинно задавати потребу в реалізації в композиції.</p></div></div>]]></content>
+        <author>
+            <name>Vladyslav Pestsov</name>
+            <uri>https://github.com/pestsov-v</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ізоляція NPM пакетів]]></title>
+        <id>https://x-fiber.org/blog/npm-package-isolation</id>
+        <link href="https://x-fiber.org/blog/npm-package-isolation"/>
+        <updated>2024-02-03T15:10:49.000Z</updated>
+        <summary type="html"><![CDATA[Ізоляція впливу NPM пакеті на проект]]></summary>
+        <content type="html"><![CDATA[<p>При першому релізі проблеми підтримки версійності не виникає.</p>]]></content>
+        <author>
+            <name>Vladyslav Pestsov</name>
+            <uri>https://github.com/pestsov-v</uri>
+        </author>
+        <category label="scheme" term="scheme"/>
+        <category label="best-practice" term="best-practice"/>
+        <category label="convention" term="convention"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Назви модулів бізнес схеми]]></title>
+        <id>https://x-fiber.org/blog/name-convention</id>
+        <link href="https://x-fiber.org/blog/name-convention"/>
+        <updated>2024-01-31T16:23:10.000Z</updated>
+        <summary type="html"><![CDATA[Продвинутий формат створення назв структурних елементів бізнес схеми]]></summary>
+        <content type="html"><![CDATA[<p>Оскільки назви між різними сервісами можуть, теоретично, переплітатись, тому ми пропонуємо вводити приставки та додавати їх
+до назви кожної прикладної області, для суттєвого зменшення проблеми перетину унікальності назв імен.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="приклад-1">Приклад 1<a href="https://x-fiber.org/blog/name-convention#%D0%BF%D1%80%D0%B8%D0%BA%D0%BB%D0%B0%D0%B4-1" class="hash-link" aria-label="Пряме посилання на Приклад 1" title="Пряме посилання на Приклад 1">​</a></h2>
+<p>Сервіс має назву <code>Системний адміністратор</code> (<code>SystemAdministrator</code>) та має наступні доменні області з урахуванням приставки:</p>
+<ul>
+<li>Користувачі - <code>SysUsers</code>.</li>
+<li>Сесії - <code>SysSessions</code>.</li>
+<li>Релізі оновлення - <code>SysUpdateRealise</code>.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="приклад-2">Приклад 2<a href="https://x-fiber.org/blog/name-convention#%D0%BF%D1%80%D0%B8%D0%BA%D0%BB%D0%B0%D0%B4-2" class="hash-link" aria-label="Пряме посилання на Приклад 2" title="Пряме посилання на Приклад 2">​</a></h2>
+<p>Ми маємо 2 сервіси - <code>Логістичні системи</code>, <code>Бухгалтерія</code>,</p>
+<p>Прикладні області сервісу <code>Логістичні системи</code> (<code>LogisticSystem</code>) будуть мати:</p>
+<ul>
+<li>Вузловий центр - <code>LogisLogisticCenter</code></li>
+<li>Транспорт - <code>LogisTransport</code></li>
+<li>Вантаж - <code>LogisCargo</code></li>
+</ul>
+<p>Прикладні області сервісу <code>Бухгалтерія</code> (<code>Accounting</code>) будуть мати:</p>
+<ul>
+<li>Звітність - <code>AccReporting</code></li>
+<li>Форми звітності - <code>AccReportForms</code></li>
+<li>Рахунки - <code>AccAccounts</code></li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="типи-структур">Типи структур<a href="https://x-fiber.org/blog/name-convention#%D1%82%D0%B8%D0%BF%D0%B8-%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80" class="hash-link" aria-label="Пряме посилання на Типи структур" title="Пряме посилання на Типи структур">​</a></h2>
+<p><code>x-fiber</code> пропонує дивитись на таблиці бази даних в розрізі різних типів структур. Ми
+виділяємо наступні базові види структур:</p>
+<table><thead><tr><th style="text-align:center">Назва</th><th style="text-align:center">Аліас</th><th style="text-align:left">Опис</th></tr></thead><tbody><tr><td style="text-align:center">Реєстр</td><td style="text-align:center">reg / REG / Reg</td><td style="text-align:left">Основоположний елемент сегменту сфери діяльності чи самої сфери діяльності</td></tr><tr><td style="text-align:center">Специфікація</td><td style="text-align:center">spec / SPEC / Spec</td><td style="text-align:left">Елемент доповнення / росширення реєстру. Не може існувати без реєстра.</td></tr><tr><td style="text-align:center">Словник</td><td style="text-align:center">dc / DC / Dc</td><td style="text-align:left">Елемент перелічення, в якому кожний запис має унікальність не тільки по ідентифікатор, а і унікальний ключ по бізнес-визначенню, або вираховуваний ключ по бізнес-значенню.</td></tr><tr><td style="text-align:center">Журнал</td><td style="text-align:center">log / LOG / Log</td><td style="text-align:left">Елемент фіксації змін в рамках реєстра, специфікації чи словників.</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="приклад-1-1">Приклад 1<a href="https://x-fiber.org/blog/name-convention#%D0%BF%D1%80%D0%B8%D0%BA%D0%BB%D0%B0%D0%B4-1-1" class="hash-link" aria-label="Пряме посилання на Приклад 1" title="Пряме посилання на Приклад 1">​</a></h3>
+<p>Припустимо ми маємо сервісни <code>Системний адміністратор</code>, який налічує прикладну область - користувачі,
+кожний користувач повинен мати роль, а роль заключається в  налічені або відсутності прав на здійснення тих чи
+інших дій. Зміни в ролях користувачів повинні фіксуватись окремо.</p>
+<p>В розрізі базових структур будемо мати наступну структуру сервісу в коді:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">SysAdmin // назва сервісу</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── SysUsersReg                                         // назва реєстру</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── SysUsersSpecPermission                          // назва специфікації прав доступу.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   ├── SysUsersSpecPermission.entry-point.ts       // реєстратор документів специфікації SysUsersSpecPermission.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   └── ...                                         // інші документи.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── SysUsersDcRoles                                 // назва словника ролей.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   ├── SysUsersDcRoles.entry-point.ts              // реєстратор документів специфікації SysUsersDcRoles.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   └── ...                                         // інші документи.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── SysUsersSpecUsersRoles                          // назва специфікації зв'язування користувачів з ролями.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   ├── SysUsersSpecUsersRoles.entry-point.ts       // реєстратор документів специфікації SysUsersSpecUsersRoles.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   └── ...                                         // інші документи.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── SysUsersLog                                     // назва журналу для фіксації зміни ролей користувачів.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   ├── SysUsersLog.entry-point.ts                  // реєстратор документів специфікації SysUsersLog.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   └── ...                                         // інші документи.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── SysUsersReg.entry-point.ts                      // реєстратор документів реєстру SysUsersReg.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|   └── ...                                             // інші документи.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└── ...                                                 // інші прикладні області.</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Копіювати в буфер обміну" title="Копіювати" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Та відповідний до них структура в базі даних</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">SYS_USERS_REG</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SYS_USERS_SPEC_PERMISSION</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SYS_USERS_SPEC_USERS_ROLES</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SYS_USERS_DC_ROLES</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SYS_USERS_LOG</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Копіювати в буфер обміну" title="Копіювати" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="приклад-2-1">Приклад 2<a href="https://x-fiber.org/blog/name-convention#%D0%BF%D1%80%D0%B8%D0%BA%D0%BB%D0%B0%D0%B4-2-1" class="hash-link" aria-label="Пряме посилання на Приклад 2" title="Пряме посилання на Приклад 2">​</a></h3>
+<p>Припустим наявний сервіс <code>Логістичні системи</code>, який налічує роботу з:</p>
+<ul>
+<li>Логістичними центрами, які мають адресу, відповідального, та інші супутні дані.</li>
+<li>Транспортом з різними типами прицепів, а відповідно і різними типами можливих вантажів.</li>
+<li>Вантаж</li>
+</ul>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">LogisticSystem</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── LogisCargoReg</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── LogisLogisticCentersReg      </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── LogisLogisticCentersTransportSpec                         </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── LogisTransportReg                              </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── LogisTransportDcTrailers                              </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── LogisTransportSpecTank            </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   ├── LogisTransportSpecTankDcTankKind        </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   └── ...                                                          </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── LogisTransportSpecRefrigerator</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   ├── LogisTransportSpecRefrigeratorDcTankKind</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   └── ...                                                 </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── LogisTransportSpecDumpTrack</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   ├── LogisTransportSpecDumpTrackDcTankKind</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   └── ...                                                 </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── LogisTransportDcManugacturer                                                                                           </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── LogisTransportDcCarMake </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   └── ...                                                   </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── LogisTransportCargoSpec</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└── ...                                                 </span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Копіювати в буфер обміну" title="Копіювати" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Та відповідний до них структура в базі даних</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">LOGIS_CARGO_REG</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOGIS_LOGISTIC_CENTERS_REG</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOGIS_LOGISTIC_CENTERS_TRANSPORT_SPEC</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOGIS_TRANSPORT_REG</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOGIS_TRANSPORT_CARGO_REG</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOGIS_TRANSPORT_DC_TRAILERS</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOGIS_TRANSPORT_DC_MANUFACTURER</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOGIS_TRANSPORT_DC_CAR_MAKE</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOGIS_TRANSPORT_LOG</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOGIS_TRANSPORT_SPEC_TANK</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOGIS_TRANSPORT_SPEC_TANK_DC_TANK_KIND</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOGIS_TRANSPORT_SPEC_REFRIGERATOR</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOGIS_TRANSPORT_SPEC_REFRIGERATOR_DC_TANK_KIND</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOGIS_TRANSPORT_SPEC_DUMP_TRACK</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOGIS_TRANSPORT_SPEC_DUMP_TRACK_DC_TANK_KIND</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Копіювати в буфер обміну" title="Копіювати" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>примітка</div><div class="admonitionContent_BuS1"><p>Завдяки пространству імен пов'язаного з сервісом та прив'язка до відповідного типи структур в великих та середніх проектах,
+буде проста навігація та ергономічний зв'язок зв'язаних елементів.</p></div></div>]]></content>
+        <author>
+            <name>Vladyslav Pestsov</name>
+            <uri>https://github.com/pestsov-v</uri>
+        </author>
+        <category label="best-practice" term="best-practice"/>
+        <category label="convention" term="convention"/>
+    </entry>
+</feed>
