@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[5775],{78590:e=>{e.exports=JSON.parse('{"label":"best-practice","permalink":"/blog/tags/best-practice","allTagsPath":"/blog/tags","count":2,"unlisted":false}')}}]);
