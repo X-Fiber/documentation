@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>X-Fiber Blog</title>
-        <link>https://x-fiber.org/blog</link>
+        <link>https://www.x-fiber.org/blog</link>
         <description>X-Fiber Blog</description>
         <lastBuildDate>Mon, 25 Mar 2024 09:03:53 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,8 +10,8 @@
         <language>uk</language>
         <item>
             <title><![CDATA[Композиція]]></title>
-            <link>https://x-fiber.org/blog/ba-composition</link>
-            <guid>https://x-fiber.org/blog/ba-composition</guid>
+            <link>https://www.x-fiber.org/blog/ba-composition</link>
+            <guid>https://www.x-fiber.org/blog/ba-composition</guid>
             <pubDate>Mon, 25 Mar 2024 09:03:53 GMT</pubDate>
             <description><![CDATA[Методологія побудова кодової бази бізнес-процесів за допомогою композиції елементів]]></description>
             <content:encoded><![CDATA[<p>Абсолютно переважна більшість веб-застосунків розрахована на відкликання подій. Так, веб-клієнти, націлені на обробку
@@ -21,7 +21,7 @@
 здійснення запитів, наприклад при видалені значення в полі на формі веб-клієнта буде створена подія "onChange". При
 надсиланні http запиту до сервера ж сервер отримає http запит з відповідним кінцевим маршрутом, за яким повинен його
 обробити.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="обробники-подій">Обробники подій<a href="https://x-fiber.org/blog/ba-composition#%D0%BE%D0%B1%D1%80%D0%BE%D0%B1%D0%BD%D0%B8%D0%BA%D0%B8-%D0%BF%D0%BE%D0%B4%D1%96%D0%B9" class="hash-link" aria-label="Пряме посилання на Обробники подій" title="Пряме посилання на Обробники подій">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="обробники-подій">Обробники подій<a href="https://www.x-fiber.org/blog/ba-composition#%D0%BE%D0%B1%D1%80%D0%BE%D0%B1%D0%BD%D0%B8%D0%BA%D0%B8-%D0%BF%D0%BE%D0%B4%D1%96%D0%B9" class="hash-link" aria-label="Пряме посилання на Обробники подій" title="Пряме посилання на Обробники подій">​</a></h2>
 <p>В рамках конкретного обробника може бути реалізовано різноманітна бізнес-логіка, так, виділимо 2 приклади:</p>
 <ol>
 <li>Реєстрація особи - <code>signup</code>
@@ -52,8 +52,8 @@
         </item>
         <item>
             <title><![CDATA[Ізоляція NPM пакетів]]></title>
-            <link>https://x-fiber.org/blog/npm-package-isolation</link>
-            <guid>https://x-fiber.org/blog/npm-package-isolation</guid>
+            <link>https://www.x-fiber.org/blog/npm-package-isolation</link>
+            <guid>https://www.x-fiber.org/blog/npm-package-isolation</guid>
             <pubDate>Sat, 03 Feb 2024 15:10:49 GMT</pubDate>
             <description><![CDATA[Ізоляція впливу NPM пакеті на проект]]></description>
             <content:encoded><![CDATA[<p>При першому релізі проблеми підтримки версійності не виникає.</p>]]></content:encoded>
@@ -63,20 +63,20 @@
         </item>
         <item>
             <title><![CDATA[Назви модулів бізнес схеми]]></title>
-            <link>https://x-fiber.org/blog/name-convention</link>
-            <guid>https://x-fiber.org/blog/name-convention</guid>
+            <link>https://www.x-fiber.org/blog/name-convention</link>
+            <guid>https://www.x-fiber.org/blog/name-convention</guid>
             <pubDate>Wed, 31 Jan 2024 16:23:10 GMT</pubDate>
             <description><![CDATA[Продвинутий формат створення назв структурних елементів бізнес схеми]]></description>
             <content:encoded><![CDATA[<p>Оскільки назви між різними сервісами можуть, теоретично, переплітатись, тому ми пропонуємо вводити приставки та додавати їх
 до назви кожної прикладної області, для суттєвого зменшення проблеми перетину унікальності назв імен.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="приклад-1">Приклад 1<a href="https://x-fiber.org/blog/name-convention#%D0%BF%D1%80%D0%B8%D0%BA%D0%BB%D0%B0%D0%B4-1" class="hash-link" aria-label="Пряме посилання на Приклад 1" title="Пряме посилання на Приклад 1">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="приклад-1">Приклад 1<a href="https://www.x-fiber.org/blog/name-convention#%D0%BF%D1%80%D0%B8%D0%BA%D0%BB%D0%B0%D0%B4-1" class="hash-link" aria-label="Пряме посилання на Приклад 1" title="Пряме посилання на Приклад 1">​</a></h2>
 <p>Сервіс має назву <code>Системний адміністратор</code> (<code>SystemAdministrator</code>) та має наступні доменні області з урахуванням приставки:</p>
 <ul>
 <li>Користувачі - <code>SysUsers</code>.</li>
 <li>Сесії - <code>SysSessions</code>.</li>
 <li>Релізі оновлення - <code>SysUpdateRealise</code>.</li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="приклад-2">Приклад 2<a href="https://x-fiber.org/blog/name-convention#%D0%BF%D1%80%D0%B8%D0%BA%D0%BB%D0%B0%D0%B4-2" class="hash-link" aria-label="Пряме посилання на Приклад 2" title="Пряме посилання на Приклад 2">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="приклад-2">Приклад 2<a href="https://www.x-fiber.org/blog/name-convention#%D0%BF%D1%80%D0%B8%D0%BA%D0%BB%D0%B0%D0%B4-2" class="hash-link" aria-label="Пряме посилання на Приклад 2" title="Пряме посилання на Приклад 2">​</a></h2>
 <p>Ми маємо 2 сервіси - <code>Логістичні системи</code>, <code>Бухгалтерія</code>,</p>
 <p>Прикладні області сервісу <code>Логістичні системи</code> (<code>LogisticSystem</code>) будуть мати:</p>
 <ul>
@@ -90,11 +90,11 @@
 <li>Форми звітності - <code>AccReportForms</code></li>
 <li>Рахунки - <code>AccAccounts</code></li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="типи-структур">Типи структур<a href="https://x-fiber.org/blog/name-convention#%D1%82%D0%B8%D0%BF%D0%B8-%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80" class="hash-link" aria-label="Пряме посилання на Типи структур" title="Пряме посилання на Типи структур">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="типи-структур">Типи структур<a href="https://www.x-fiber.org/blog/name-convention#%D1%82%D0%B8%D0%BF%D0%B8-%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80" class="hash-link" aria-label="Пряме посилання на Типи структур" title="Пряме посилання на Типи структур">​</a></h2>
 <p><code>x-fiber</code> пропонує дивитись на таблиці бази даних в розрізі різних типів структур. Ми
 виділяємо наступні базові види структур:</p>
 <table><thead><tr><th style="text-align:center">Назва</th><th style="text-align:center">Аліас</th><th style="text-align:left">Опис</th></tr></thead><tbody><tr><td style="text-align:center">Реєстр</td><td style="text-align:center">reg / REG / Reg</td><td style="text-align:left">Основоположний елемент сегменту сфери діяльності чи самої сфери діяльності</td></tr><tr><td style="text-align:center">Специфікація</td><td style="text-align:center">spec / SPEC / Spec</td><td style="text-align:left">Елемент доповнення / росширення реєстру. Не може існувати без реєстра.</td></tr><tr><td style="text-align:center">Словник</td><td style="text-align:center">dc / DC / Dc</td><td style="text-align:left">Елемент перелічення, в якому кожний запис має унікальність не тільки по ідентифікатор, а і унікальний ключ по бізнес-визначенню, або вираховуваний ключ по бізнес-значенню.</td></tr><tr><td style="text-align:center">Журнал</td><td style="text-align:center">log / LOG / Log</td><td style="text-align:left">Елемент фіксації змін в рамках реєстра, специфікації чи словників.</td></tr></tbody></table>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="приклад-1-1">Приклад 1<a href="https://x-fiber.org/blog/name-convention#%D0%BF%D1%80%D0%B8%D0%BA%D0%BB%D0%B0%D0%B4-1-1" class="hash-link" aria-label="Пряме посилання на Приклад 1" title="Пряме посилання на Приклад 1">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="приклад-1-1">Приклад 1<a href="https://www.x-fiber.org/blog/name-convention#%D0%BF%D1%80%D0%B8%D0%BA%D0%BB%D0%B0%D0%B4-1-1" class="hash-link" aria-label="Пряме посилання на Приклад 1" title="Пряме посилання на Приклад 1">​</a></h3>
 <p>Припустимо ми маємо сервісни <code>Системний адміністратор</code>, який налічує прикладну область - користувачі,
 кожний користувач повинен мати роль, а роль заключається в  налічені або відсутності прав на здійснення тих чи
 інших дій. Зміни в ролях користувачів повинні фіксуватись окремо.</p>
@@ -102,7 +102,7 @@
 <div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">SysAdmin // назва сервісу</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── SysUsersReg                                         // назва реєстру</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── SysUsersSpecPermission                          // назва специфікації прав доступу.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   ├── SysUsersSpecPermission.entry-point.ts       // реєстратор документів специфікації SysUsersSpecPermission.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   └── ...                                         // інші документи.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── SysUsersDcRoles                                 // назва словника ролей.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   ├── SysUsersDcRoles.entry-point.ts              // реєстратор документів специфікації SysUsersDcRoles.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   └── ...                                         // інші документи.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── SysUsersSpecUsersRoles                          // назва специфікації зв'язування користувачів з ролями.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   ├── SysUsersSpecUsersRoles.entry-point.ts       // реєстратор документів специфікації SysUsersSpecUsersRoles.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   └── ...                                         // інші документи.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── SysUsersLog                                     // назва журналу для фіксації зміни ролей користувачів.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   ├── SysUsersLog.entry-point.ts                  // реєстратор документів специфікації SysUsersLog.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   └── ...                                         // інші документи.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── SysUsersReg.entry-point.ts                      // реєстратор документів реєстру SysUsersReg.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|   └── ...                                             // інші документи.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└── ...                                                 // інші прикладні області.</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Копіювати в буфер обміну" title="Копіювати" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <p>Та відповідний до них структура в базі даних</p>
 <div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">SYS_USERS_REG</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SYS_USERS_SPEC_PERMISSION</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SYS_USERS_SPEC_USERS_ROLES</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SYS_USERS_DC_ROLES</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SYS_USERS_LOG</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Копіювати в буфер обміну" title="Копіювати" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="приклад-2-1">Приклад 2<a href="https://x-fiber.org/blog/name-convention#%D0%BF%D1%80%D0%B8%D0%BA%D0%BB%D0%B0%D0%B4-2-1" class="hash-link" aria-label="Пряме посилання на Приклад 2" title="Пряме посилання на Приклад 2">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="приклад-2-1">Приклад 2<a href="https://www.x-fiber.org/blog/name-convention#%D0%BF%D1%80%D0%B8%D0%BA%D0%BB%D0%B0%D0%B4-2-1" class="hash-link" aria-label="Пряме посилання на Приклад 2" title="Пряме посилання на Приклад 2">​</a></h3>
 <p>Припустим наявний сервіс <code>Логістичні системи</code>, який налічує роботу з:</p>
 <ul>
 <li>Логістичними центрами, які мають адресу, відповідального, та інші супутні дані.</li>
